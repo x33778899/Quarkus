@@ -1,10 +1,16 @@
 package org.example.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.json.bind.annotation.JsonbTypeSerializer;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Objects;
 
 @Entity
 @Data
@@ -22,6 +28,8 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    @JsonIgnore
+    @JsonBackReference
     private User user;
+
+
 }

@@ -1,19 +1,20 @@
 package org.example.api;
 
 
-import jakarta.annotation.Resource;
+import io.quarkus.agroal.DataSource;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import org.example.dto.ResponseDTO;
+import org.example.interceptor.Loggable;
 import org.example.model.User;
 import org.example.service.UserService;
 import org.example.util.ResponseUtil;
-import org.jboss.resteasy.annotations.Body;
 
 import java.util.Collections;
 
 @Path("/user")
+@Loggable
 public class UserResource {
 
     @Inject
@@ -29,6 +30,7 @@ public class UserResource {
                     "success",
                     userService.findAllUsers());
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return ResponseUtil.createResponse(500,
                     "Internal server error",
                     Collections.emptyList());

@@ -1,7 +1,9 @@
 package org.example.service;
 
+import io.quarkus.agroal.DataSource;
 import jakarta.inject.Inject;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.persistence.EntityManager;
 import jakarta.transaction.Transactional;
 import org.example.dao.UserRepository;
 import org.example.model.User;
@@ -11,7 +13,9 @@ import java.util.List;
 @ApplicationScoped
 public class UserServiceImpl implements UserService {
 
+
     @Inject
+    @DataSource("demo")
     UserRepository userRepository;
 
     @Override

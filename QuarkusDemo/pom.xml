@@ -42,6 +42,10 @@
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-hibernate-orm-panache</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-hibernate-orm</artifactId>
+        </dependency>
 
         <!-- Quarkus JDBC MySQL -->
         <dependency>
@@ -71,6 +75,11 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-agroal</artifactId>
+            <version>3.0.1.Final</version>
+        </dependency>
         <!-- Jackson 依赖 -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
