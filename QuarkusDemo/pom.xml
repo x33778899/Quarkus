@@ -111,7 +111,7 @@
                             <!-- 建置目標 -->
                             <goal>build</goal>
                             <!-- 開發模式目標 -->
-                            <goal>dev</goal>
+<!--                            <goal>dev</goal>-->
                         </goals>
                     </execution>
                 </executions>
